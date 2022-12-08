@@ -88,7 +88,13 @@ def main():
 
     if args.cephadm:
         # Prepend the command with the cephadm binary and the shell command
-        ceph_health = [cephadm_exec, 'shell', '-v', "%s:%s" % (args.keyring, args.keyring), '--'] + ceph_health
+        ceph_health = [cephadm_exec, 'shell']
+
+        if args.keyring:
+            ceph_health.append('-v')
+            ceph_health.append('%s:%s' % (args.keyring, args.keyring))
+        ceph_health.append('--')
+        ceph_health.append(ceph_exec)
 
     if args.monaddress:
         ceph_health.append('-m')
