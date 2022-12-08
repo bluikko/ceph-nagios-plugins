@@ -92,7 +92,7 @@ def main():
 
         if args.keyring:
             ceph_health.append('-v')
-            ceph_health.append('%s:%s' % (args.keyring, args.keyring))
+            ceph_health.append('%s:%s:ro' % (args.keyring, args.keyring))
         ceph_health.append('--')
         ceph_health.append(ceph_exec)
 
