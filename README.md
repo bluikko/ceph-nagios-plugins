@@ -369,5 +369,11 @@ The `check_ceph_mgr` nagios plugin monitors the mgr.
 The `check_ceph_osd_db` checks the percentage usage of the BlueStore DB
 for the OSD and reports it as critical if it's above the threshold.
 
+## check_ceph_osd_frag
+
+The `check_ceph_osd_frag` checks the percentage fragmentation of the
+BlueStore DB for the OSD and reports it as critical if it's above the
+threshold. See [RedHat documentation](https://access.redhat.com/documentation/fr-fr/red_hat_ceph_storage/5/html/administration_guide/osd-bluestore#checking-for-fragmentation_admin) for more details.
+
 [ceph]: http://www.ceph.com
 [cephx]: http://ceph.com/docs/master/rados/operations/authentication/
