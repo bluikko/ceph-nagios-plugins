@@ -141,6 +141,7 @@ def main():
         daemon_ceph_cmd.append(osd)
         daemon_ceph_cmd.append('perf')
         daemon_ceph_cmd.append('dump')
+        daemon_ceph_cmd.append('bluefs')
 
         p = subprocess.Popen(daemon_ceph_cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         output, err = p.communicate()
